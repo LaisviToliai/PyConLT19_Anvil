@@ -1,0 +1,60 @@
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{}'}
+    name: card_2
+    layout_properties: {grid_position: 'JYHYGI,OMASIJ'}
+    components:
+    - type: Label
+      properties: {role: subheading, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: tasks, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'LLQWTX,DHIBFC'}
+    - type: RepeatingPanel
+      properties: {item_template: ItemTemplate1}
+      name: repeating_panel_1
+      layout_properties: {grid_position: 'HODSDT,RGOQUA'}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{}'}
+    name: card_1
+    layout_properties: {grid_position: 'MEGKBL,QJICBF'}
+    components:
+    - type: Label
+      properties: {role: input-prompt, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: New task, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'WRQYJO,ZWWJXE'}
+    - type: TextBox
+      properties: {}
+      name: new_task_box
+      layout_properties: {grid_position: 'WRQYJO,CSRBQZ'}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Add task, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: 'fa:plus'}
+      name: add_btn
+      layout_properties: {grid_position: 'WRQYJO,OLQMZA'}
+      event_bindings: {click: add_btn_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: TODO list, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_4
+  layout_properties: {slot: title}
